@@ -2,11 +2,24 @@
 
 {% block main_content %}
 
-    {% for post in posts %}
-        <li> {{post.titulo}} </li>
-        <br>
-        <p> {{post.contenido}} </p>
-        </br>
-    {% endfor %}
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Contenido</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for post in posts %}
+                <tr>
+                <td>{{post.titulo}}</td>
+                <td>{{post.contenido}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 
 {% endblock main_content %}
