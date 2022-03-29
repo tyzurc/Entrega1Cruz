@@ -2,20 +2,20 @@
 
 {% block main_content %}
 
-<div>
+<div class="container mt-5">
     <table class="table">
         <thead>
             <tr>
-                <th>Nombre</th>
-                <th>Username</th>
+                <th class="table-success">Nombre</th>
+                <th class="table-success">Username</th>
             </tr>
         </thead>
 
         <tbody>
             {% for user in users %}
                 <tr>
-                <td>{{user.nombre}}</td>
-                <td>{{user.user_name}}</td>
+                    <td>{{user.nombre}}</td>
+                    <td>{{user.user_name}}</td>
                 </tr>
             {% endfor %}
         </tbody>
