@@ -3,5 +3,6 @@ from blog.views import *
 
 urlpatterns = [
     path('', inicio, name="Inicio"),
-    path('listar/', listar, name="Posts"),
+    path('posts/', posts, name="Posts"),
+    path('users/', users, name="Usuarixs"),
 ]

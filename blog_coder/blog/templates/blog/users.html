@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+
+{% block main_content %}
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Username</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for user in users %}
+                <tr>
+                <td>{{user.nombre}}</td>
+                <td>{{user.user_name}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock main_content %}
