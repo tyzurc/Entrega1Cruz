@@ -2,7 +2,7 @@ from django import forms
 
 class PostsForm(forms.Form):
     titulo = forms.CharField(max_length=60)
-    contenido = forms.TextInput()
+    contenido = forms.CharField(max_length=200)
     autorx = forms.CharField(max_length=60)
     fecha_creacion = forms.DateField()
 
