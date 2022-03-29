@@ -9,6 +9,7 @@ class Post(models.Model):
     contenido = models.TextField()
     autorx = models.CharField(max_length=60, default="Nombre")
     fecha_creacion = models.DateField(default=datetime.now)
+
 class User(models.Model):
     id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=60)
