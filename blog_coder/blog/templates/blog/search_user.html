@@ -4,15 +4,17 @@
 
 <div class="container mt-5">
     <form action="/blog/buscaruser/" method="get" class="form-group">
+        Ingrese un nombre de usuario:
         <input type="text" name="user_name">
         <input type="submit" value="Buscar">
     </form>
 </div>
 
-{% if error %}<p style="color:red">{{error}}</p>{% endif %}
+<div class="container mt-5">
+    {% if error %}<p style="color:red">{{error}}</p>{% endif %}
 
-{% if user %}
-    <p> Usuarix encontrado: {{user.user_name}}</p>
-{% endif %}
-
+    {% if user %}
+        <p> Usuarix encontrado: {{user.user_name}}</p>
+    {% endif %}
+</div>
 {% endblock main_content %}

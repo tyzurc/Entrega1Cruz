@@ -5,7 +5,7 @@ from blog.forms import *
 # Create your views here.
 
 def inicio(request):
-    return render(request, 'blog/inicio.html', {"title": "Inicio", "message": "¡Bienvenidx!"})
+    return render(request, 'blog/inicio.html', {"title": "Inicio", "message": "¡Bienvenidx al blog!"})
 
 def posts(request):
     posts = Post.objects.all()
@@ -53,8 +53,8 @@ def search_user(request):
     if data:
         try:
             user = User.objects.get(user_name=data)
-            return render(request, 'blog/search_user.html', {"user": user})
+            return render(request, 'blog/search_user.html', {"user": user, "title": "Búsqueda de usuarixs", "message": "Búsqueda de usuarixs"})
         except Exception as exc:
             print(exc)
             error = "No existe ese usuarix"
-    return render(request, 'blog/search_user.html', {"error": error})
+    return render(request, 'blog/search_user.html', {"error": error, "title": "Búsqueda de usuarixs", "message": "Búsqueda de usuarixs"})
