@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from blog.models import *
 from blog.forms import *
 
@@ -29,4 +28,19 @@ def posts(request):
 
 def users(request):
     users = User.objects.all()
-    return render(request, 'blog/users.html', {"users": users, "title": "Usuarixs", "message": "Todxs los usuarixs"})
+
+    if request.method == "POST":
+        formulario = UsersForm(request.POST)
+
+        if formulario.is_valid():
+            data = formulario.cleaned_data
+
+            user = User(nombre=data['nombre'], user_name=data['user_name'], email=data['email'])
+            user.save()
+
+            formulario = UsersForm()
+            return render(request, 'blog/users.html', {"users": users, "title": "Usuarixs", "message": "Todxs los usuarixs", "formulario": formulario})
+    
+    else:      
+        formulario = UsersForm()
+        return render(request, 'blog/users.html', {"users": users, "title": "Usuarixs", "message": "Todxs los usuarixs", "formulario": formulario})
