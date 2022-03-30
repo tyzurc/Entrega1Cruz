@@ -44,3 +44,17 @@ def users(request):
     else:      
         formulario = UsersForm()
         return render(request, 'blog/users.html', {"users": users, "title": "Usuarixs", "message": "Todxs los usuarixs", "formulario": formulario})
+
+def search_user(request):
+
+    data = request.GET.get('user_name', "")
+    error = ""
+
+    if data:
+        try:
+            user = User.objects.get(user_name=data)
+            return render(request, 'blog/search_user.html', {"user": user})
+        except Exception as exc:
+            print(exc)
+            error = "No existe ese usuarix"
+    return render(request, 'blog/search_user.html', {"error": error})
