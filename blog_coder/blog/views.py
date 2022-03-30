@@ -9,6 +9,7 @@ def inicio(request):
     return render(request, 'blog/inicio.html', {"title": "Inicio", "message": "¡Bienvenidx!"})
 
 def posts(request):
+    posts = Post.objects.all()
 
     if request.method == "POST":
         formulario = PostsForm(request.POST)
