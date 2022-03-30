@@ -13,6 +13,6 @@ class Post(models.Model):
 class User(models.Model):
     id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=60)
-    user_name = models.CharField(max_length=60, default="User")
+    user_name = models.CharField(max_length=60, unique=True)
     email = models.CharField(max_length=60)
-    # ver después cómo agregar cant. de posts hechos por cada user
+    password = models.CharField(max_length=60, default="Password")
