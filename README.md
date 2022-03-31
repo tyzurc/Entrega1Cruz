@@ -12,11 +12,7 @@ Una vez inicializada la aplicación, tendrás disponible para visitar la url de 
 
 ### Páginas
 
--[Posts](http://127.0.0.1:8000/blog/posts/)
-  En esta página podrás crear posts y visualizar todos los agregados
--[Usuarixs](http://127.0.0.1:8000/blog/users/)
-  En esta página podrás crear usuarixs y visualizar todos los agregados
--[Búsqueda de usuarixs](http://127.0.0.1:8000/blog/buscaruser/)
-  En esta página podrás realizar una búsqueda de usuarixs
--[Tópicos](http://127.0.0.1:8000/blog/topics/)
-  En esta página podrás crear tópicos y visualizar todos los agregados
+-[Posts](http://127.0.0.1:8000/blog/posts/): En esta página podrás crear posts y visualizar todos los agregados
+-[Usuarixs](http://127.0.0.1:8000/blog/users/): En esta página podrás crear usuarixs y visualizar todos los agregados
+-[Búsqueda de usuarixs](http://127.0.0.1:8000/blog/buscaruser/): En esta página podrás realizar una búsqueda de usuarixs
+-[Tópicos](http://127.0.0.1:8000/blog/topics/): En esta página podrás crear tópicos y visualizar todos los agregados
