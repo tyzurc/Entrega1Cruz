@@ -58,3 +58,22 @@ def search_user(request):
             print(exc)
             error = "No existe ese usuarix"
     return render(request, 'blog/search_user.html', {"error": error, "title": "Búsqueda de usuarixs", "message": "Búsqueda de usuarixs"})
+
+def topics(request):
+    topics = Topic.objects.all()
+
+    if request.method == "POST":
+        formulario = TopicsForm(request.POST)
+
+        if formulario.is_valid():
+            data = formulario.cleaned_data
+
+            topic = Topic(nombre=data['nombre'], descripcion=data['descripcion'])
+            topic.save()
+
+            formulario = TopicsForm()
+            return render(request, 'blog/topics.html', {"topics": topics, "title": "Topicos", "message": "Todos los tópicos", "formulario": formulario})
+    
+    else:      
+        formulario = TopicsForm()
+        return render(request, 'blog/topics.html', {"topics": topics, "title": "Topicos", "message": "Todos los tópicos", "formulario": formulario})
